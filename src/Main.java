@@ -8,8 +8,8 @@ public class Main {
         User user=new User("7974430504", BigDecimal.valueOf(5000.0));
             try {
                 Socket socket = new Socket("localhost", 7000);
-                System.out.println("Bank A and B are connected now");
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                System.out.println("Bank A and B are connected now");
                 while(true) {
                     BigDecimal bigDecimal = new BigDecimal( bufferedReader.readLine());
                     user.setBalance(user.getBalance().add(bigDecimal));
